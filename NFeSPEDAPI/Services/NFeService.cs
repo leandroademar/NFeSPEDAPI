@@ -54,7 +54,7 @@ namespace NFeSPEDAPI.Services;
                     ChaveAcesso = infNFe.Attribute("Id")?.Value.Replace("NFe", ""),
                     Numero = ide?.Element(ns + "nNF")?.Value,
                     Serie = ide?.Element(ns + "serie")?.Value,
-                    DataEmissao = DateTime.Parse(ide?.Element(ns + "dhEmi")?.Value ?? DateTime.Now.ToString()),
+                    DataEmissao = DateTime.Parse(ide?.Element(ns + "dhEmi")?.Value ?? DateTime.Now.ToString()).ToUniversalTime(),
                     CNPJEmitente = emit?.Element(ns + "CNPJ")?.Value,
                     NomeEmitente = emit?.Element(ns + "xNome")?.Value,
                     CNPJDestinatario = dest?.Element(ns + "CNPJ")?.Value,

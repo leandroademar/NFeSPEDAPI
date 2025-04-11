@@ -43,7 +43,7 @@ public class NFeModel
     public string NomeDestinatario { get; set; }
 
     [Column("data_importacao")]
-    public DateTime DataImportacao { get; set; } = DateTime.Now;
+    public DateTime DataImportacao { get; set; } = DateTime.UtcNow;
 
     [Column("xml_completo")]
     public string XmlCompleto { get; set; }

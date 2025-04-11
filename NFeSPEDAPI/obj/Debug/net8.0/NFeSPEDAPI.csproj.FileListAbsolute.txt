@@ -132,3 +132,4 @@
 /Users/leandro/RiderProjects/NFeSPEDAPI/NFeSPEDAPI/obj/Debug/net8.0/NFeSPEDAPI.pdb
 /Users/leandro/RiderProjects/NFeSPEDAPI/NFeSPEDAPI/obj/Debug/net8.0/NFeSPEDAPI.genruntimeconfig.cache
 /Users/leandro/RiderProjects/NFeSPEDAPI/NFeSPEDAPI/obj/Debug/net8.0/ref/NFeSPEDAPI.dll
+/Users/leandro/RiderProjects/NFeSPEDAPI/NFeSPEDAPI/obj/Debug/net8.0/NFeSPEDAPI.sourcelink.json
