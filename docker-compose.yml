@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8380:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=User Id=supabase_admin;Password=Sup3rAdminDB;Server=supabase-db;Port=5432;Database=postgres;
+    networks:
+      - supabase_default
+
+networks:
+  supabase_default:
+    external: true
