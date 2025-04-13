@@ -4,9 +4,7 @@ namespace NFeSPEDAPI.Services;
 
 public interface ISpedService
 {
-    Task<SpedModel> ProcessarArquivoSpedAsync(IFormFile arquivo);
-    Task<SpedModel> ProcessarArquivoSpedAsync(string conteudoArquivo);
-    Task<SpedModel> SalvarSpedAsync(SpedModel sped);
-    Task<SpedModel> ObterSpedPorIdAsync(Guid id);
-    Task<IEnumerable<SpedModel>> ListarSpedAsync(DateTime? dataInicial = null, DateTime? dataFinal = null);
+    Task<ProcessamentoResult> ProcessarArquivoSpedAsync(string caminhoArquivo, CancellationToken cancellationToken = default);
+    Task<ProcessamentoResult> ProcessarArquivoSpedAsync(Stream stream, CancellationToken cancellationToken = default);
+    Task<string> ObterCNPJDoArquivoAsync(Stream stream, CancellationToken cancellationToken = default);
 }

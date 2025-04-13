@@ -2,6 +2,48 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "EficazFramework.SPED/6.4.0": {
+        "type": "package",
+        "dependencies": {
+          "EficazFramework.SPED.Schemas": "6.4.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.3",
+          "System.ServiceModel.Duplex": "6.0.0",
+          "System.ServiceModel.Http": "8.1.1",
+          "System.ServiceModel.NetTcp": "8.1.1"
+        },
+        "compile": {
+          "lib/net8.0/EficazFramework.SPED.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/EficazFramework.SPED.dll": {}
+        }
+      },
+      "EficazFramework.SPED.Abstractions/6.4.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Formats.Asn1": "9.0.2",
+          "System.Security.Cryptography.Pkcs": "9.0.2",
+          "System.ServiceModel.Security": "6.0.0"
+        },
+        "compile": {
+          "lib/net8.0/EficazFramework.SPED.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/EficazFramework.SPED.Abstractions.dll": {}
+        }
+      },
+      "EficazFramework.SPED.Schemas/6.4.0": {
+        "type": "package",
+        "dependencies": {
+          "EficazFramework.SPED.Abstractions": "6.4.0"
+        },
+        "compile": {
+          "lib/net8.0/EficazFramework.SPED.Schemas.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/EficazFramework.SPED.Schemas.dll": {}
+        }
+      },
       "Humanizer.Core/2.14.1": {
         "type": "package",
         "compile": {
@@ -26,6 +68,25 @@
           "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "Microsoft.Bcl.Cryptography/9.0.2": {
+        "type": "package",
+        "dependencies": {
+          "System.Formats.Asn1": "9.0.2"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.Bcl.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Bcl.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
         }
       },
       "Microsoft.Build.Framework/17.8.3": {
@@ -618,6 +679,19 @@
           "buildTransitive/net8.0/Microsoft.Extensions.Logging.Abstractions.targets": {}
         }
       },
+      "Microsoft.Extensions.ObjectPool/8.0.10": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.ObjectPool.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.ObjectPool.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Options/9.0.4": {
         "type": "package",
         "dependencies": {
@@ -937,6 +1011,22 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
+      "System.Formats.Asn1/9.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.Formats.Asn1.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Formats.Asn1.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
       "System.IO.Pipelines/9.0.4": {
         "type": "package",
         "compile": {
@@ -986,6 +1076,314 @@
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
+        }
+      },
+      "System.Security.Cryptography.Pkcs/9.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl.Cryptography": "9.0.2",
+          "System.Formats.Asn1": "9.0.2"
+        },
+        "compile": {
+          "lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "System.Security.Cryptography.Xml/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.Cryptography.Pkcs": "8.0.1"
+        },
+        "compile": {
+          "lib/net8.0/System.Security.Cryptography.Xml.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Security.Cryptography.Xml.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "System.ServiceModel.Duplex/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.ServiceModel.Primitives": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/System.ServiceModel.Duplex.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/System.ServiceModel.Duplex.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "System.ServiceModel.Http/8.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.ServiceModel.Primitives": "8.1.1"
+        },
+        "compile": {
+          "ref/net8.0/System.ServiceModel.Http.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/System.ServiceModel.Http.dll": {
+            "related": ".pdb"
+          }
+        },
+        "resource": {
+          "lib/net8.0/cs/System.ServiceModel.Http.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/net8.0/de/System.ServiceModel.Http.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net8.0/es/System.ServiceModel.Http.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net8.0/fr/System.ServiceModel.Http.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net8.0/it/System.ServiceModel.Http.resources.dll": {
+            "locale": "it"
+          },
+          "lib/net8.0/ja/System.ServiceModel.Http.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net8.0/ko/System.ServiceModel.Http.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net8.0/pl/System.ServiceModel.Http.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/net8.0/pt-BR/System.ServiceModel.Http.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net8.0/ru/System.ServiceModel.Http.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net8.0/tr/System.ServiceModel.Http.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net8.0/zh-Hans/System.ServiceModel.Http.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/net8.0/zh-Hant/System.ServiceModel.Http.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        }
+      },
+      "System.ServiceModel.NetFramingBase/8.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.ServiceModel.Primitives": "8.1.1"
+        },
+        "compile": {
+          "ref/net8.0/System.ServiceModel.NetFramingBase.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/System.ServiceModel.NetFramingBase.dll": {
+            "related": ".pdb"
+          }
+        },
+        "resource": {
+          "lib/net8.0/cs/System.ServiceModel.NetFramingBase.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/net8.0/de/System.ServiceModel.NetFramingBase.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net8.0/es/System.ServiceModel.NetFramingBase.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net8.0/fr/System.ServiceModel.NetFramingBase.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net8.0/it/System.ServiceModel.NetFramingBase.resources.dll": {
+            "locale": "it"
+          },
+          "lib/net8.0/ja/System.ServiceModel.NetFramingBase.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net8.0/ko/System.ServiceModel.NetFramingBase.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net8.0/pl/System.ServiceModel.NetFramingBase.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/net8.0/pt-BR/System.ServiceModel.NetFramingBase.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net8.0/ru/System.ServiceModel.NetFramingBase.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net8.0/tr/System.ServiceModel.NetFramingBase.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net8.0/zh-Hans/System.ServiceModel.NetFramingBase.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/net8.0/zh-Hant/System.ServiceModel.NetFramingBase.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        }
+      },
+      "System.ServiceModel.NetTcp/8.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.ServiceModel.NetFramingBase": "8.1.1",
+          "System.ServiceModel.Primitives": "8.1.1"
+        },
+        "compile": {
+          "ref/net8.0/System.ServiceModel.NetTcp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/System.ServiceModel.NetTcp.dll": {
+            "related": ".pdb"
+          }
+        },
+        "resource": {
+          "lib/net8.0/cs/System.ServiceModel.NetTcp.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/net8.0/de/System.ServiceModel.NetTcp.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net8.0/es/System.ServiceModel.NetTcp.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net8.0/fr/System.ServiceModel.NetTcp.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net8.0/it/System.ServiceModel.NetTcp.resources.dll": {
+            "locale": "it"
+          },
+          "lib/net8.0/ja/System.ServiceModel.NetTcp.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net8.0/ko/System.ServiceModel.NetTcp.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net8.0/pl/System.ServiceModel.NetTcp.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/net8.0/pt-BR/System.ServiceModel.NetTcp.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net8.0/ru/System.ServiceModel.NetTcp.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net8.0/tr/System.ServiceModel.NetTcp.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net8.0/zh-Hans/System.ServiceModel.NetTcp.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/net8.0/zh-Hant/System.ServiceModel.NetTcp.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        }
+      },
+      "System.ServiceModel.Primitives/8.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.ObjectPool": "8.0.10",
+          "System.Security.Cryptography.Xml": "8.0.2"
+        },
+        "compile": {
+          "ref/net8.0/System.ServiceModel.Primitives.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/System.ServiceModel.Duplex.dll": {
+            "related": ".pdb"
+          },
+          "lib/net8.0/System.ServiceModel.Primitives.dll": {
+            "related": ".pdb"
+          },
+          "lib/net8.0/System.ServiceModel.Security.dll": {
+            "related": ".pdb"
+          },
+          "lib/net8.0/System.ServiceModel.dll": {
+            "related": ".Duplex.pdb;.pdb;.Primitives.pdb;.Security.pdb"
+          }
+        },
+        "resource": {
+          "lib/net8.0/cs/System.ServiceModel.Primitives.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/net8.0/de/System.ServiceModel.Primitives.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net8.0/es/System.ServiceModel.Primitives.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net8.0/fr/System.ServiceModel.Primitives.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net8.0/it/System.ServiceModel.Primitives.resources.dll": {
+            "locale": "it"
+          },
+          "lib/net8.0/ja/System.ServiceModel.Primitives.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net8.0/ko/System.ServiceModel.Primitives.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net8.0/pl/System.ServiceModel.Primitives.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/net8.0/pt-BR/System.ServiceModel.Primitives.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net8.0/ru/System.ServiceModel.Primitives.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net8.0/tr/System.ServiceModel.Primitives.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net8.0/zh-Hans/System.ServiceModel.Primitives.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/net8.0/zh-Hant/System.ServiceModel.Primitives.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        }
+      },
+      "System.ServiceModel.Security/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.ServiceModel.Primitives": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/System.ServiceModel.Security.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/System.ServiceModel.Security.dll": {
+            "related": ".pdb"
+          }
         }
       },
       "System.Text.Encodings.Web/9.0.4": {
@@ -1049,6 +1447,48 @@
     }
   },
   "libraries": {
+    "EficazFramework.SPED/6.4.0": {
+      "sha512": "AWQHttcCiIOkOYL1exot6UVS0PzYPfwkoCyoxho2NREUBfaTw4eKZWmnJv+Q+EB8nPRUcRGF7SHRe4R6WE+/uw==",
+      "type": "package",
+      "path": "eficazframework.sped/6.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "eficazframework.sped.6.4.0.nupkg.sha512",
+        "eficazframework.sped.nuspec",
+        "lib/net8.0/EficazFramework.SPED.dll",
+        "lib/net9.0/EficazFramework.SPED.dll",
+        "logo.png"
+      ]
+    },
+    "EficazFramework.SPED.Abstractions/6.4.0": {
+      "sha512": "9s1biCf9bveuCuIQZBhntIyov4+sK/1cI1f3TeV9e5iySEg5jaGqb6Kwr0PYKI+BSSIHsdGZJTMHINOoEA4h1g==",
+      "type": "package",
+      "path": "eficazframework.sped.abstractions/6.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "eficazframework.sped.abstractions.6.4.0.nupkg.sha512",
+        "eficazframework.sped.abstractions.nuspec",
+        "lib/net8.0/EficazFramework.SPED.Abstractions.dll",
+        "lib/net9.0/EficazFramework.SPED.Abstractions.dll",
+        "logo.png"
+      ]
+    },
+    "EficazFramework.SPED.Schemas/6.4.0": {
+      "sha512": "HTJlTSlm7KEVWpsdfWq7wJK7uefrNzUm4HpLlgmmkbXZVIgzfUeh89X8A+bvfufb84v9hC9aDWqiEQ5e7DP//A==",
+      "type": "package",
+      "path": "eficazframework.sped.schemas/6.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "eficazframework.sped.schemas.6.4.0.nupkg.sha512",
+        "eficazframework.sped.schemas.nuspec",
+        "lib/net8.0/EficazFramework.SPED.Schemas.dll",
+        "lib/net9.0/EficazFramework.SPED.Schemas.dll",
+        "logo.png"
+      ]
+    },
     "Humanizer.Core/2.14.1": {
       "sha512": "lQKvtaTDOXnoVJ20ibTuSIOf2i0uO0MPbDhd1jm238I+U/2ZnRENj0cktKZhtchBMtCUSRQ5v4xBCUbKNmyVMw==",
       "type": "package",
@@ -1087,6 +1527,34 @@
         "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.xml",
         "microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
         "microsoft.bcl.asyncinterfaces.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Bcl.Cryptography/9.0.2": {
+      "sha512": "zDBd9yO09nR6ye7xUOBAVuNg/zlomhcgu077ovNoZClV7hFvbZEGLHUFpGs0GPm+OK+wY7HynabbMH82ZSPovw==",
+      "type": "package",
+      "path": "microsoft.bcl.cryptography/9.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Bcl.Cryptography.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Bcl.Cryptography.targets",
+        "lib/net462/Microsoft.Bcl.Cryptography.dll",
+        "lib/net462/Microsoft.Bcl.Cryptography.xml",
+        "lib/net8.0/Microsoft.Bcl.Cryptography.dll",
+        "lib/net8.0/Microsoft.Bcl.Cryptography.xml",
+        "lib/net9.0/Microsoft.Bcl.Cryptography.dll",
+        "lib/net9.0/Microsoft.Bcl.Cryptography.xml",
+        "lib/netstandard2.0/Microsoft.Bcl.Cryptography.dll",
+        "lib/netstandard2.0/Microsoft.Bcl.Cryptography.xml",
+        "microsoft.bcl.cryptography.9.0.2.nupkg.sha512",
+        "microsoft.bcl.cryptography.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
@@ -2629,6 +3097,25 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Microsoft.Extensions.ObjectPool/8.0.10": {
+      "sha512": "u7gAG7JgxF8VSJUGPSudAcPxOt+ymJKQCSxNRxiuKV+klCQbHljQR75SilpedCTfhPWDhtUwIJpnDVtspr9nMg==",
+      "type": "package",
+      "path": "microsoft.extensions.objectpool/8.0.10",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net462/Microsoft.Extensions.ObjectPool.dll",
+        "lib/net462/Microsoft.Extensions.ObjectPool.xml",
+        "lib/net8.0/Microsoft.Extensions.ObjectPool.dll",
+        "lib/net8.0/Microsoft.Extensions.ObjectPool.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.ObjectPool.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.ObjectPool.xml",
+        "microsoft.extensions.objectpool.8.0.10.nupkg.sha512",
+        "microsoft.extensions.objectpool.nuspec"
+      ]
+    },
     "Microsoft.Extensions.Options/9.0.4": {
       "sha512": "fiFI2+58kicqVZyt/6obqoFwHiab7LC4FkQ3mmiBJ28Yy4fAvy2+v9MRnSvvlOO8chTOjKsdafFl/K9veCPo5g==",
       "type": "package",
@@ -3103,6 +3590,34 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "System.Formats.Asn1/9.0.2": {
+      "sha512": "OKWHCPYQr/+cIoO8EVjFn7yFyiT8Mnf1wif/5bYGsqxQV6PrwlX2HQ9brZNx57ViOvRe4ing1xgHCKl/5Ko8xg==",
+      "type": "package",
+      "path": "system.formats.asn1/9.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Formats.Asn1.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Formats.Asn1.targets",
+        "lib/net462/System.Formats.Asn1.dll",
+        "lib/net462/System.Formats.Asn1.xml",
+        "lib/net8.0/System.Formats.Asn1.dll",
+        "lib/net8.0/System.Formats.Asn1.xml",
+        "lib/net9.0/System.Formats.Asn1.dll",
+        "lib/net9.0/System.Formats.Asn1.xml",
+        "lib/netstandard2.0/System.Formats.Asn1.dll",
+        "lib/netstandard2.0/System.Formats.Asn1.xml",
+        "system.formats.asn1.9.0.2.nupkg.sha512",
+        "system.formats.asn1.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "System.IO.Pipelines/9.0.4": {
       "sha512": "luF2Xba+lTe2GOoNQdZLe8q7K6s7nSpWZl9jIwWNMszN4/Yv0lmxk9HISgMmwdyZ83i3UhAGXaSY9o6IJBUuuA==",
       "type": "package",
@@ -3182,6 +3697,277 @@
         "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
         "system.runtime.compilerservices.unsafe.nuspec",
         "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Security.Cryptography.Pkcs/9.0.2": {
+      "sha512": "aC9IlCbgompuyQUixa03yEq/fGDLwsSn1tiqFsk/hMDTSxcdf1Ha77SfDgdguLx+sAsuHWAkiXgveDsHdw5bdA==",
+      "type": "package",
+      "path": "system.security.cryptography.pkcs/9.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Security.Cryptography.Pkcs.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Security.Cryptography.Pkcs.targets",
+        "lib/net462/System.Security.Cryptography.Pkcs.dll",
+        "lib/net462/System.Security.Cryptography.Pkcs.xml",
+        "lib/net8.0/System.Security.Cryptography.Pkcs.dll",
+        "lib/net8.0/System.Security.Cryptography.Pkcs.xml",
+        "lib/net9.0/System.Security.Cryptography.Pkcs.dll",
+        "lib/net9.0/System.Security.Cryptography.Pkcs.xml",
+        "lib/netstandard2.0/System.Security.Cryptography.Pkcs.dll",
+        "lib/netstandard2.0/System.Security.Cryptography.Pkcs.xml",
+        "lib/netstandard2.1/System.Security.Cryptography.Pkcs.dll",
+        "lib/netstandard2.1/System.Security.Cryptography.Pkcs.xml",
+        "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll",
+        "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.xml",
+        "runtimes/win/lib/net9.0/System.Security.Cryptography.Pkcs.dll",
+        "runtimes/win/lib/net9.0/System.Security.Cryptography.Pkcs.xml",
+        "system.security.cryptography.pkcs.9.0.2.nupkg.sha512",
+        "system.security.cryptography.pkcs.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Security.Cryptography.Xml/8.0.2": {
+      "sha512": "aDM/wm0ZGEZ6ZYJLzgqjp2FZdHbDHh6/OmpGfb7AdZ105zYmPn/83JRU2xLIbwgoNz9U1SLUTJN0v5th3qmvjA==",
+      "type": "package",
+      "path": "system.security.cryptography.xml/8.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Security.Cryptography.Xml.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Security.Cryptography.Xml.targets",
+        "lib/net462/System.Security.Cryptography.Xml.dll",
+        "lib/net462/System.Security.Cryptography.Xml.xml",
+        "lib/net6.0/System.Security.Cryptography.Xml.dll",
+        "lib/net6.0/System.Security.Cryptography.Xml.xml",
+        "lib/net7.0/System.Security.Cryptography.Xml.dll",
+        "lib/net7.0/System.Security.Cryptography.Xml.xml",
+        "lib/net8.0/System.Security.Cryptography.Xml.dll",
+        "lib/net8.0/System.Security.Cryptography.Xml.xml",
+        "lib/netstandard2.0/System.Security.Cryptography.Xml.dll",
+        "lib/netstandard2.0/System.Security.Cryptography.Xml.xml",
+        "system.security.cryptography.xml.8.0.2.nupkg.sha512",
+        "system.security.cryptography.xml.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.ServiceModel.Duplex/6.0.0": {
+      "sha512": "Gyz/xzC3IdJjDDK9E4ii4MHsDBfQpX1NiO0aANdSJJOnlaxeFu/J8k5RdbRmm0EC8BA/UPHZ9zqQz26gtFeh2Q==",
+      "type": "package",
+      "path": "system.servicemodel.duplex/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net6.0/System.ServiceModel.Duplex.dll",
+        "lib/net6.0/System.ServiceModel.Duplex.pdb",
+        "system.servicemodel.duplex.6.0.0.nupkg.sha512",
+        "system.servicemodel.duplex.nuspec"
+      ]
+    },
+    "System.ServiceModel.Http/8.1.1": {
+      "sha512": "OArC2JVvd4bOzWaBBcEy6RnLdeH+DaOJ5wzbZc5DpSSpwMmgADIEkP6bDjJEVfGVuNjlgvI08GsRpSO6Q+9Jmg==",
+      "type": "package",
+      "path": "system.servicemodel.http/8.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "README.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net462/System.ServiceModel.Http.dll",
+        "lib/net462/System.ServiceModel.Http.pdb",
+        "lib/net8.0/System.ServiceModel.Http.dll",
+        "lib/net8.0/System.ServiceModel.Http.pdb",
+        "lib/net8.0/cs/System.ServiceModel.Http.resources.dll",
+        "lib/net8.0/de/System.ServiceModel.Http.resources.dll",
+        "lib/net8.0/es/System.ServiceModel.Http.resources.dll",
+        "lib/net8.0/fr/System.ServiceModel.Http.resources.dll",
+        "lib/net8.0/it/System.ServiceModel.Http.resources.dll",
+        "lib/net8.0/ja/System.ServiceModel.Http.resources.dll",
+        "lib/net8.0/ko/System.ServiceModel.Http.resources.dll",
+        "lib/net8.0/pl/System.ServiceModel.Http.resources.dll",
+        "lib/net8.0/pt-BR/System.ServiceModel.Http.resources.dll",
+        "lib/net8.0/ru/System.ServiceModel.Http.resources.dll",
+        "lib/net8.0/tr/System.ServiceModel.Http.resources.dll",
+        "lib/net8.0/zh-Hans/System.ServiceModel.Http.resources.dll",
+        "lib/net8.0/zh-Hant/System.ServiceModel.Http.resources.dll",
+        "lib/netstandard2.0/System.ServiceModel.Http.dll",
+        "lib/netstandard2.0/System.ServiceModel.Http.pdb",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/net462/System.ServiceModel.Http.dll",
+        "ref/net8.0/System.ServiceModel.Http.dll",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard2.0/System.ServiceModel.Http.dll",
+        "system.servicemodel.http.8.1.1.nupkg.sha512",
+        "system.servicemodel.http.nuspec"
+      ]
+    },
+    "System.ServiceModel.NetFramingBase/8.1.1": {
+      "sha512": "I0uBkY4vN8kkz1Lp1EMXmhtHwAMS56Nr2YXXcYc1z0Rz9yTwd6skXy7bvmvdkPFSo66LSZ3BgXiYhkBk9zH85g==",
+      "type": "package",
+      "path": "system.servicemodel.netframingbase/8.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "README.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net8.0/System.ServiceModel.NetFramingBase.dll",
+        "lib/net8.0/System.ServiceModel.NetFramingBase.pdb",
+        "lib/net8.0/cs/System.ServiceModel.NetFramingBase.resources.dll",
+        "lib/net8.0/de/System.ServiceModel.NetFramingBase.resources.dll",
+        "lib/net8.0/es/System.ServiceModel.NetFramingBase.resources.dll",
+        "lib/net8.0/fr/System.ServiceModel.NetFramingBase.resources.dll",
+        "lib/net8.0/it/System.ServiceModel.NetFramingBase.resources.dll",
+        "lib/net8.0/ja/System.ServiceModel.NetFramingBase.resources.dll",
+        "lib/net8.0/ko/System.ServiceModel.NetFramingBase.resources.dll",
+        "lib/net8.0/pl/System.ServiceModel.NetFramingBase.resources.dll",
+        "lib/net8.0/pt-BR/System.ServiceModel.NetFramingBase.resources.dll",
+        "lib/net8.0/ru/System.ServiceModel.NetFramingBase.resources.dll",
+        "lib/net8.0/tr/System.ServiceModel.NetFramingBase.resources.dll",
+        "lib/net8.0/zh-Hans/System.ServiceModel.NetFramingBase.resources.dll",
+        "lib/net8.0/zh-Hant/System.ServiceModel.NetFramingBase.resources.dll",
+        "ref/net8.0/System.ServiceModel.NetFramingBase.dll",
+        "system.servicemodel.netframingbase.8.1.1.nupkg.sha512",
+        "system.servicemodel.netframingbase.nuspec"
+      ]
+    },
+    "System.ServiceModel.NetTcp/8.1.1": {
+      "sha512": "zR+irrXvrQcMsutBhEWknlXrD+ZeMdmdf+h8KZckBIp3p3mIjTIkimsE0Il8cgSVMTC7/4no8nAAYYazQ1O6Pw==",
+      "type": "package",
+      "path": "system.servicemodel.nettcp/8.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "README.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net462/System.ServiceModel.NetTcp.dll",
+        "lib/net462/System.ServiceModel.NetTcp.pdb",
+        "lib/net8.0/System.ServiceModel.NetTcp.dll",
+        "lib/net8.0/System.ServiceModel.NetTcp.pdb",
+        "lib/net8.0/cs/System.ServiceModel.NetTcp.resources.dll",
+        "lib/net8.0/de/System.ServiceModel.NetTcp.resources.dll",
+        "lib/net8.0/es/System.ServiceModel.NetTcp.resources.dll",
+        "lib/net8.0/fr/System.ServiceModel.NetTcp.resources.dll",
+        "lib/net8.0/it/System.ServiceModel.NetTcp.resources.dll",
+        "lib/net8.0/ja/System.ServiceModel.NetTcp.resources.dll",
+        "lib/net8.0/ko/System.ServiceModel.NetTcp.resources.dll",
+        "lib/net8.0/pl/System.ServiceModel.NetTcp.resources.dll",
+        "lib/net8.0/pt-BR/System.ServiceModel.NetTcp.resources.dll",
+        "lib/net8.0/ru/System.ServiceModel.NetTcp.resources.dll",
+        "lib/net8.0/tr/System.ServiceModel.NetTcp.resources.dll",
+        "lib/net8.0/zh-Hans/System.ServiceModel.NetTcp.resources.dll",
+        "lib/net8.0/zh-Hant/System.ServiceModel.NetTcp.resources.dll",
+        "lib/netstandard2.0/System.ServiceModel.NetTcp.dll",
+        "lib/netstandard2.0/System.ServiceModel.NetTcp.pdb",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/net462/System.ServiceModel.NetTcp.dll",
+        "ref/net8.0/System.ServiceModel.NetTcp.dll",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard2.0/System.ServiceModel.NetTcp.dll",
+        "system.servicemodel.nettcp.8.1.1.nupkg.sha512",
+        "system.servicemodel.nettcp.nuspec"
+      ]
+    },
+    "System.ServiceModel.Primitives/8.1.1": {
+      "sha512": "v+jwURtpzg1eI5RDARP9AAQg5GmtNu6rWAOVTauL74cB8jcuP6DB8PVpz1IPTRavX6qlFAKkS+X+9QR5S84QyA==",
+      "type": "package",
+      "path": "system.servicemodel.primitives/8.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "README.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net462/System.ServiceModel.Duplex.dll",
+        "lib/net462/System.ServiceModel.Duplex.pdb",
+        "lib/net462/System.ServiceModel.Primitives.dll",
+        "lib/net462/System.ServiceModel.Primitives.pdb",
+        "lib/net462/System.ServiceModel.Security.dll",
+        "lib/net462/System.ServiceModel.Security.pdb",
+        "lib/net8.0/System.ServiceModel.Duplex.dll",
+        "lib/net8.0/System.ServiceModel.Duplex.pdb",
+        "lib/net8.0/System.ServiceModel.Primitives.dll",
+        "lib/net8.0/System.ServiceModel.Primitives.pdb",
+        "lib/net8.0/System.ServiceModel.Security.dll",
+        "lib/net8.0/System.ServiceModel.Security.pdb",
+        "lib/net8.0/System.ServiceModel.dll",
+        "lib/net8.0/System.ServiceModel.pdb",
+        "lib/net8.0/cs/System.ServiceModel.Primitives.resources.dll",
+        "lib/net8.0/de/System.ServiceModel.Primitives.resources.dll",
+        "lib/net8.0/es/System.ServiceModel.Primitives.resources.dll",
+        "lib/net8.0/fr/System.ServiceModel.Primitives.resources.dll",
+        "lib/net8.0/it/System.ServiceModel.Primitives.resources.dll",
+        "lib/net8.0/ja/System.ServiceModel.Primitives.resources.dll",
+        "lib/net8.0/ko/System.ServiceModel.Primitives.resources.dll",
+        "lib/net8.0/pl/System.ServiceModel.Primitives.resources.dll",
+        "lib/net8.0/pt-BR/System.ServiceModel.Primitives.resources.dll",
+        "lib/net8.0/ru/System.ServiceModel.Primitives.resources.dll",
+        "lib/net8.0/tr/System.ServiceModel.Primitives.resources.dll",
+        "lib/net8.0/zh-Hans/System.ServiceModel.Primitives.resources.dll",
+        "lib/net8.0/zh-Hant/System.ServiceModel.Primitives.resources.dll",
+        "lib/netstandard2.0/System.ServiceModel.Duplex.dll",
+        "lib/netstandard2.0/System.ServiceModel.Duplex.pdb",
+        "lib/netstandard2.0/System.ServiceModel.Primitives.dll",
+        "lib/netstandard2.0/System.ServiceModel.Primitives.pdb",
+        "lib/netstandard2.0/System.ServiceModel.Security.dll",
+        "lib/netstandard2.0/System.ServiceModel.Security.pdb",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/net462/System.ServiceModel.Primitives.dll",
+        "ref/net8.0/System.ServiceModel.Primitives.dll",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard2.0/System.ServiceModel.Primitives.dll",
+        "system.servicemodel.primitives.8.1.1.nupkg.sha512",
+        "system.servicemodel.primitives.nuspec"
+      ]
+    },
+    "System.ServiceModel.Security/6.0.0": {
+      "sha512": "r/8fNXE/tzUgglw63px4jGc+Tdm3bh4nsMsAA2OvJYch9s4F243l549kBK9myqUVNp9FqnrTGn/1xNK1vh0LGQ==",
+      "type": "package",
+      "path": "system.servicemodel.security/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net6.0/System.ServiceModel.Security.dll",
+        "lib/net6.0/System.ServiceModel.Security.pdb",
+        "system.servicemodel.security.6.0.0.nupkg.sha512",
+        "system.servicemodel.security.nuspec"
       ]
     },
     "System.Text.Encodings.Web/9.0.4": {
@@ -3319,6 +4105,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "EficazFramework.SPED >= 6.4.0",
       "Microsoft.EntityFrameworkCore >= 9.0.4",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.4",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 9.0.4",
@@ -3367,6 +4154,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "EficazFramework.SPED": {
+            "target": "Package",
+            "version": "[6.4.0, )"
+          },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[9.0.4, )"

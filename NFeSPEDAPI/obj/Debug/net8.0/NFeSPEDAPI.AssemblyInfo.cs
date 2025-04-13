@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NFeSPEDAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c436535657a6f1eab5f32e7fe6b25e6df9d01d8e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f27a01bc0397e4bde3bf82ea6b9ef99f1398371a")]
 [assembly: System.Reflection.AssemblyProductAttribute("NFeSPEDAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NFeSPEDAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
