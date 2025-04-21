@@ -1,5 +1,3 @@
-using NFeSPEDAPI.Models.SPED;
-
 namespace NFeSPEDAPI.Services;
 
 public interface ISpedService

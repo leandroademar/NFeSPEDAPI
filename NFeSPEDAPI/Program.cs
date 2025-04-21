@@ -10,11 +10,11 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
         
-        // Configura o PostgreSQL
-        builder.Services.AddDbContext<ApplicationDbContext>(options =>
+         //Configura o PostgreSQL
+        builder.Services.AddDbContext<AppDbContextPg>(options =>
             options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-        // Add services to the container.
+         //Add services to the container.
 
         builder.Services.AddControllers();
         builder.Services.AddEndpointsApiExplorer();
@@ -26,6 +26,12 @@ public class Program
 
 
         var app = builder.Build();
+        
+        // using (var scope = app.Services.CreateScope())
+        // {
+        //     //var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+        //     //db.Database.Migrate();
+        // }
 
     
         app.UseSwagger();

@@ -1,35 +1,37 @@
 using System.Reflection;
 using EficazFramework.SPED.Schemas.EFD_ICMS_IPI;
 using NFeSPEDAPI.Data;
-using Registro0000 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0000;
-using Registro0001 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0001;
-using Registro0005 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0005;
-using Registro0015 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0015;
-using Registro0100 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0100;
-using Registro0150 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0150;
-using Registro0175 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0175;
-using Registro0190 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0190;
-using Registro0200 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0200;
-using Registro0205 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0205;
-using Registro0206 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0206;
-using Registro0220 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0220;
-using Registro0300 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0300;
-using Registro0305 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0305;
-using Registro0400 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0400;
-using Registro0450 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0450;
-using Registro0460 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0460;
-using Registro0500 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0500;
-using Registro0600 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0600;
-using Registro0990 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0990;
+using NFeSPEDAPI.Models.Sped;
+
+// using Registro0000 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0000;
+// using Registro0001 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0001;
+// using Registro0005 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0005;
+// using Registro0015 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0015;
+// using Registro0100 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0100;
+// using Registro0150 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0150;
+// using Registro0175 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0175;
+// using Registro0190 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0190;
+// using Registro0200 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0200;
+// using Registro0205 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0205;
+// using Registro0206 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0206;
+// using Registro0220 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0220;
+// using Registro0300 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0300;
+// using Registro0305 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0305;
+// using Registro0400 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0400;
+// using Registro0450 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0450;
+// using Registro0460 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0460;
+// using Registro0500 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0500;
+// using Registro0600 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0600;
+// using Registro0990 = NFeSPEDAPI.Models.SPED.Blocos.Bloco_0.Registro0990;
 
 namespace NFeSPEDAPI.Services;
 
 public class SpedService : ISpedService
 {
-    private readonly ApplicationDbContext _context;
+    private readonly AppDbContextPg _context;
     private readonly ILogger<SpedService> _logger;
 
-    public SpedService(ApplicationDbContext context, ILogger<SpedService> logger)
+    public SpedService(AppDbContextPg context, ILogger<SpedService> logger)
     {
         _context = context;
         _logger = logger;
@@ -106,6 +108,7 @@ public class SpedService : ISpedService
                 int registrosBloco0 = await ProcessarBlocoZeroAsync(escrituracao, cancellationToken);
                 totalRegistros += registrosBloco0;
                 result.RegistrosPorBloco["Bloco 0"] = registrosBloco0;
+                
 
                 // // Processa os registros do Bloco B
                 // int registrosBlocoB = await ProcessarBlocoBAsync(escrituracao, cancellationToken);
@@ -153,6 +156,10 @@ public class SpedService : ISpedService
                 // result.RegistrosPorBloco["Bloco 9"] = registrosBloco9;
 
                 // Salva todas as alterações em um único commit
+                
+                // Extrair o ano e mês do arquivo ou usar uma lógica específica
+                string dataFile = ObterDataFileDoArquivo(stream);
+                // _context.SaveChangesAsync(dataFile);                
                 await _context.SaveChangesAsync(cancellationToken);
 
                 // Commit da transação
@@ -186,13 +193,26 @@ public class SpedService : ISpedService
     }
 
     #region Processamento de Blocos
+    
+    
+    private string ObterDataFileDoArquivo(Stream stream)
+    {
+        // Exemplo: extrair do Registro0000
+        var escrituracao = new Escrituracao { Encoding = System.Text.Encoding.Default };
+        stream.Position = 0;
+        var bloco0 = escrituracao.Blocos["0"] as Bloco0;
+    
+        // Usa a data inicial do arquivo como base para o datafile
+        return bloco0?.Registro0000?.DataInicial?.ToString("yyyyMM") 
+               ?? DateTime.Now.ToString("yyyyMM");
+    }
 
     private async Task<int> ProcessarBlocoZeroAsync(Escrituracao escrituracao, CancellationToken cancellationToken)
     {
         int totalRegistros = 0;
         var bloco0 = escrituracao.Blocos["0"] as Bloco0;
 
-        if (bloco0 == null || bloco0.Registro0000 == null)
+        if (bloco0 == null || bloco0.Registro0001 == null)
         {
             _logger.LogWarning("Bloco 0 não encontrado ou vazio no arquivo SPED");
             return totalRegistros;
@@ -201,7 +221,8 @@ public class SpedService : ISpedService
         // Processa o registro 0000
         if (bloco0.Registro0000 != null)
         {
-            var registro0000 = MapearRegistro<Registro0000>(bloco0.Registro0000);
+            Escrituracaofiscal reg0 = new Escrituracaofiscal();
+            reg0.Estado = 
             _context.Add(registro0000);
             totalRegistros++;
         }
@@ -436,8 +457,9 @@ public class SpedService : ISpedService
     /// </summary>
     private TDestino MapearRegistro<TDestino>(object origem) where TDestino : class, new()
     {
-        var destino = new TDestino();
+       var destino = new TDestino();
         CopiarPropriedades(origem, destino);
+    
         return destino;
     }
 

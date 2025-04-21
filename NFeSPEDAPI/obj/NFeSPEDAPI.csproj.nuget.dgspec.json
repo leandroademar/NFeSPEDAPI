@@ -43,23 +43,77 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "EficazFramework.Blazor": {
+              "target": "Package",
+              "version": "[6.4.5, )"
+            },
+            "EficazFramework.Collections": {
+              "target": "Package",
+              "version": "[6.4.5, )"
+            },
+            "EficazFramework.Data": {
+              "target": "Package",
+              "version": "[6.4.5, )"
+            },
+            "EficazFramework.Data.MySql": {
+              "target": "Package",
+              "version": "[6.4.5, )"
+            },
+            "EficazFramework.DocsApiPlugin": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.8, )"
+            },
+            "EficazFramework.Expressions": {
+              "target": "Package",
+              "version": "[6.4.5, )"
+            },
+            "EficazFramework.Generators": {
+              "target": "Package",
+              "version": "[6.4.1, )"
+            },
             "EficazFramework.SPED": {
               "target": "Package",
               "version": "[6.4.0, )"
             },
+            "EficazFramework.SPED.Abstractions": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            },
+            "EficazFramework.SPED.Schemas": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            },
+            "EficazFramework.Utilities": {
+              "target": "Package",
+              "version": "[6.4.5, )"
+            },
+            "Microsoft.CodeAnalysis.CSharp": {
+              "target": "Package",
+              "version": "[4.12.0, )"
+            },
+            "Microsoft.CodeAnalysis.CSharp.Workspaces": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
+            "Microsoft.CodeAnalysis.Common": {
+              "target": "Package",
+              "version": "[4.12.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[9.0.4, )"
+              "version": "[8.0.15, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.4, )"
+              "version": "[8.0.15, )"
             },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
-              "version": "[9.0.4, )"
+              "version": "[8.0.11, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

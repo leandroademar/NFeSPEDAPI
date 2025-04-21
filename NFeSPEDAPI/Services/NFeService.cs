@@ -7,11 +7,11 @@ namespace NFeSPEDAPI.Services;
 
  public class NFeService : INFeService
     {
-        private readonly ApplicationDbContext _context;
-
-        public NFeService(ApplicationDbContext context)
-        {
-            _context = context;
+        private readonly AppDbContextPg _context;
+        
+         public NFeService(AppDbContextPg context)
+         {
+             _context = context;
         }
 
         public async Task<NFeModel> ProcessarXmlNFeAsync(IFormFile arquivo)
